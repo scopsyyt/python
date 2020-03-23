@@ -1,1 +1,1 @@
-worker: node index.js
+worker: py korona.py
