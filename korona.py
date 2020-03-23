@@ -6,7 +6,7 @@ import bs4
 import aiohttp
 import datetime
 
-client = commands.Bot(command_prefix='s.')
+client = commands.Bot(command_prefix='')
 
 print ("scop")
 print ("ScoKramp betöltése...")
@@ -65,42 +65,4 @@ akkreditált laboratóriumban vizsgált minták száma""", "")
     embed.set_footer(text="FightMan01 bot - Koronavírus adatok", icon_url="https://fightman01bot.ml/favicon.png")
     await loadmsg.edit(content=None, embed=embed)
 
-@client.command(pass_context=True)
-async def gmail():
-	embed = discord.Embed(
-		title = 'Email cím',
-		description = 'Ha valami hibát találnál a botban írd a lenti email címre',
-		colour = discord.Colour.red()
-	)
-	embed.add_field(name='Személy neve', value='ScopsyYT', inline=False)
-	embed.add_field(name='Email címe', value='scopsyscopsy@gmail.com', inline=False)
-	embed.set_footer(text='KORONAVIRUS INFORMÁCIÓ')
-	await client.say(embed=embed)
-
-@client.command(pass_context=True)
-async def say(ctx, *args):
-	if ctx.message.author.server_permissions.manage_messages:
-		mesg = ' '.join(args)
-		await client.delete_message(ctx.message)
-		return await client.say(mesg)
-	else:
-		return await client.say("❌ Nincs jogod használni! (Üzenetek kezelése)")
-
-@client.command(pass_context=True)
-async def avatar(ctx, member: discord.Member):
-		u = member.avatar_url
-		embed = discord.Embed(description="<@{}> Szép profil".format(member.id), colour=discord.Colour.gold())
-		embed.set_image(url=u)
-		await client.say(embed=embed)
-@avatar.error
-async def avatar_error(ctx, error):
-	await client.say("Használd: avatar [@Member]")
-
-@client.command(pass_context=True)
-async def join(ctx):
-	channel = ctx.message.author.voice.voice_channel
-	await client.join_voice_channel(channel)
-
-
-
-client.run("Njc3ODkwNTg2NjY1MTU2NjA5.XnirzA.lLtNxN-e5jVzcKrqkXQBjNL1fuI")
+client.run("Njc3ODkwNTg2NjY1MTU2NjA5.Xnj13A.LZpCvFNdS4QP7bjoeWaF0Q8iGjE")
